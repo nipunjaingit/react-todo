@@ -8,6 +8,6 @@ export default function (props) {
             <button type="button" className="close" aria-label="Close" onClick={props.deleteItem}>
                 <span aria-hidden="true">&times;</span>
             </button>
-        </li>    
+        </li> 
     )
 }

@@ -48,6 +48,7 @@ class ListContainer extends React.Component {
         return (
             <div className="listContainer">
                 <form onSubmit={this.appendToList}>
+                    
                     <Input value={this.state.value} onValueChange={this.onValueChange}/>
 
                     <Select />
@@ -70,7 +71,7 @@ class ListContainer extends React.Component {
                 <ul className="list-group pt-5">
                     {this.state.list.length > 0 ? <p className="colorWhite">Total Items: {this.state.list.length}</p> : <p className="colorWhite">No items added</p>}
                     {this.state.list.map((item) => {
-                        return <ListItem textValue={item.value} key={item.key} deleteItem={(e) => this.deleteItem(e, item.key)} themeValue={'new'}/>
+                        return <ListItem textValue={item.value} key={item.key} deleteItem={(e) => this.deleteItem(e, item.key)} />
                     })}
                 </ul>
 

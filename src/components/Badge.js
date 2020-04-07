@@ -2,11 +2,18 @@ import React from 'react'
 import { Context } from '../store'
 
 function Badge () {
-    return  <Context.Consumer>{(context) => {
-            return context.itemState === 'Completed' ? <span className="badge badge-success">Complete</span> : context.itemState === 'Failed' ? <span className="badge badge-danger">Failed</span> : <span className="badge badge-primary">Pending</span>
-        }}
-        </Context.Consumer>
-    
+    let colorClass
+    return <Context.Consumer>{(context) => {
+        if (context.itemState === 'Completed') {
+            colorClass = 'success'
+        } else if (context.itemState === 'Failed') {
+            colorClass = 'danger'
+        } else {
+            colorClass = 'primary'
+        }
+        return <span className={`badge badge-${colorClass}`}>{context.itemState}</span>
+    }}
+</Context.Consumer>
 }
 
 export default Badge

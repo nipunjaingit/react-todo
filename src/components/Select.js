@@ -3,7 +3,7 @@ import { Context } from '../store'
 
 function Select () {
     return <Context.Consumer>{(context) => (
-            <select defaultChecked="Pending" onChange={context.setItemState} style={{width: '100%', marginTop: '10px'}}>
+            <select className="form-control" defaultChecked="Pending" onChange={context.setItemState} style={{width: '100%', marginTop: '10px'}}>
                 <option value="Pending">
                     Pending
                 </option>
